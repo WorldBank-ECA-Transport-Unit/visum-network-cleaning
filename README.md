@@ -29,7 +29,7 @@ Python 3.8 or later, PTV Visum, Windows operating system. No external Python pac
 
 ## Workflow
 
-### Step 1 — Detect Duplicates (run outside Visum)
+### Step 1 - Detect Duplicates (run outside Visum)
 
 Script: `01_visum_overlap_cleanup.py`
 
@@ -45,7 +45,7 @@ The script produces the following outputs:
 - `node_merge_map.csv` - mapping of smaller country nodes to base country nodes
 - `_FLAGGED.att` files - original exports with duplicates flagged, for visual review in Visum
 
-### Step 2 — Delete Duplicates (run inside Visum)
+### Step 2 - Delete Duplicates (run inside Visum)
 
 Script: `02_visum_delete_links.py`
 
@@ -94,7 +94,7 @@ Only the configuration section in Script 1 needs to change. Examples:
 
 ## Safety Notes
 
-Always back up the Visum network file before running Script 2. Both `.att` exports must come from the same spatial selection. Links with OSM_WAY_ID of zero or blank are excluded from duplicate detection as they have no reliable match key. The default tolerance of 1.0 metre is recommended — increasing it raises the risk of false positives.
+Always back up the Visum network file before running Script 2. Both `.att` exports must come from the same spatial selection. Links with OSM_WAY_ID of zero or blank are excluded from duplicate detection as they have no reliable match key. The default tolerance of 1.0 metre is recommended increasing it raises the risk of false positives.
 
 ## Authors
 
