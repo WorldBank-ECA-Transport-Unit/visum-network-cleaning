@@ -1,8 +1,8 @@
 # Visum Network Cleaning
 
-<sub>World Bank ECA Transport Unit — Infrastructure and Urban Development, Europe and Central Asia Region</sub>
+> World Bank ECA Transport Unit 
 
-<sub>Automated detection and removal of duplicate nodes and links in multi-country Visum transport networks.</sub>.
+> Automated detection and removal of duplicate nodes and links in multi-country Visum transport networks
 
 ## Overview
 
