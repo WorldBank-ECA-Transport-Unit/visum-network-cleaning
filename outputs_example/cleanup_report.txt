@@ -1,0 +1,85 @@
+======================================================================
+VISUM NETWORK OVERLAP CLEANUP — STEP 1 of 2
+Run: 2026-05-28 17:12:25
+======================================================================
+
+  Node file:       D:\WorldBank\ECA Model\Scripts\Second Try\nodes.att
+  Link file:       D:\WorldBank\ECA Model\Scripts\Second Try\links.att
+  Base country:    'Romania' — KEPT
+  Smaller country: '' — duplicates FLAGGED
+  Tolerance:       1.0 m
+
+----------------------------------------------------------------------
+STEP 1: Finding duplicate links...
+  Definition: same OSM_WAY_ID AND same FROM+TO coordinates
+
+  Shared OSM_WAY_IDs found:           265
+  Duplicate links identified:          242
+  Link rows to delete (x2 directions): 484
+
+  Transport systems on duplicate links:
+    BUS,CAR,HGV: 138 links
+    : 68 links
+    RAIL: 36 links ⚠ RAIL — verify no active train routes
+
+----------------------------------------------------------------------
+STEP 2: Finding duplicate nodes...
+  Definition: same coordinates within tolerance
+
+  Total nodes in spatial selection:   344
+  Duplicate node pairs found:          17
+
+  Duplicate node pairs (Moldova → Romania):
+  Moldova Node     Romania Node     Distance (m)
+  ---------------------------------------------
+  498832           323514           0.0
+  500444           326377           0.0
+  504203           322810           0.0
+  504204           322825           0.0
+  505912           324610           0.0
+  505913           324620           0.0
+  505914           324607           0.0
+  505915           324593           0.0
+  505955           321637           0.0
+  505957           321640           0.0
+  505958           321624           0.0
+  505959           321635           0.0
+  505960           321614           0.0
+  505961           321530           0.0
+  505963           321511           0.0
+  506970           326390           0.0
+  507256           322784           0.0
+
+----------------------------------------------------------------------
+STEP 3: Flagging and saving .att files...
+  Links flagged (OVERLAP_TOBE_DELETED=1): 484
+  Saved: d:\WorldBank\ECA Model\Scripts\Second Try\spatial_selection_links_FLAGGED.att
+  Nodes flagged (OVERLAPPING_NODE=1):     17
+  Saved: d:\WorldBank\ECA Model\Scripts\Second Try\spatial_selection_nodes_FLAGGED.att
+
+----------------------------------------------------------------------
+STEP 4: Saving deletion lists...
+  nodes_to_delete.csv: 17 nodes — saved to d:\WorldBank\ECA Model\Scripts\Second Try\nodes_to_delete.csv
+  node_merge_map.csv:  17 pairs — saved to d:\WorldBank\ECA Model\Scripts\Second Try\node_merge_map.csv
+  links_to_delete.csv: 242 links — saved to d:\WorldBank\ECA Model\Scripts\Second Try\links_to_delete.csv
+
+======================================================================
+ANALYSIS COMPLETE
+======================================================================
+  Duplicate links flagged:   242
+  Duplicate nodes flagged:   17
+  Time elapsed:              0s
+
+Outputs:
+  d:\WorldBank\ECA Model\Scripts\Second Try\spatial_selection_links_FLAGGED.att
+  d:\WorldBank\ECA Model\Scripts\Second Try\spatial_selection_nodes_FLAGGED.att
+  d:\WorldBank\ECA Model\Scripts\Second Try\links_to_delete.csv
+  d:\WorldBank\ECA Model\Scripts\Second Try\nodes_to_delete.csv
+  d:\WorldBank\ECA Model\Scripts\Second Try\node_merge_map.csv
+  d:\WorldBank\ECA Model\Scripts\Second Try\cleanup_report.txt
+
+Next steps:
+  1. Review cleanup_report.txt
+  2. Run visum_merge_nodes.py inside Visum to merge duplicate nodes
+  3. Run visum_delete.py inside Visum to delete duplicate links (after supervisor review)
+======================================================================
