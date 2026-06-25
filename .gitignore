@@ -1,3 +1,30 @@
+
+# Visum files
+*.att
+*.ver
+*.ver~
+*.bak
+
+# Output files (keep only the examples in outputs_example/)
+cleanup_report.txt
+links_to_delete.csv
+nodes_to_delete.csv
+node_merge_map.csv
+spatial_selection_*.att
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+
+
+
 ### AL ###
 #Template for AL projects for Dynamics 365 Business Central
 #launch.json folder
